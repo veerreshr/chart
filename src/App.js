@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import { LocalProvider, LocalContext } from "./Localcontext";
 
-function App() {
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Chart from "./components/Chart";
+
+function App(props) {
+  console.log(props);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <LocalProvider>
+        <div className="App">
+          <Navbar />
+          <Route exact path="/" component={Login} />
+          <Route exact path="/chart" component={Chart} />
+        </div>
+      </LocalProvider>{" "}
+    </Router>
   );
 }
 
