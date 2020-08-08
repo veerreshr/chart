@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-dark navbar-expand-md navigation-clean-button">
       <div className="container">
-        <button className="navbar-brand">Charts</button>
+        <button className="navbar-brand no-decoration">Charts</button>
         <button
           data-toggle="collapse"
           className="navbar-toggler"
